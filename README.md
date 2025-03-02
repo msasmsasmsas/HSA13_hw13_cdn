@@ -9,22 +9,36 @@
 
 
 ; <<>> DiG 9.18.30-0ubuntu0.24.04.2-Ubuntu <<>> carpic.com
+
 ;; global options: +cmd
+
 ;; Got answer:
+
 ;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 18399
+
 ;; flags: qr aa rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
 
+
 ;; OPT PSEUDOSECTION:
+
 ; EDNS: version: 0, flags:; udp: 1232
+
 ; COOKIE: fc9d24be20b71d430100000067c4d3f93df3da8687e53eee (good)
+
 ;; QUESTION SECTION:
 
+
 ;; ANSWER SECTION:
+
 carpic.com.             300     IN      A       10.30.0.10
 
+
 ;; Query time: 0 msec
+
 ;; SERVER: 127.0.0.11#53(127.0.0.11) (UDP)
+
 ;; WHEN: Sun Mar 02 21:56:09 UTC 2025
+
 ;; MSG SIZE  rcvd: 83
 
 
@@ -34,38 +48,59 @@ carpic.com.             300     IN      A       10.30.0.10
 
 
 
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
+  % Total    % Received % Xferd  Average   Speed   Time    Time     Time  Current
+                                   Dload  Upload   Total   Spent    Left  Speed
+                                 
   0  107k    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+  
 content-length: 110497
+
 last-modified: Sun, 02 Mar 2025 20:10:50 GMT
+
 etag: "67c4bb4a-1afa1"
+
 accept-ranges: bytes
+
 x-load-balancer: lb-europe
 
-(.venv) PS E:\HSA13\HSA13_hw13_cdn>
-(.venv) PS E:\HSA13\HSA13_hw13_cdn>
-(.venv) PS E:\HSA13\HSA13_hw13_cdn>
+
+
 (.venv) PS E:\HSA13\HSA13_hw13_cdn> docker exec client-world dig carpic.com  # Повинен вернути IP word балансувальника  (10.30.0.11)
 
+
 ; <<>> DiG 9.18.30-0ubuntu0.24.04.2-Ubuntu <<>> carpic.com
+
 ;; global options: +cmd
+
 ;; Got answer:
+
 ;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 34384
+
 ;; flags: qr aa rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
 
+
 ;; OPT PSEUDOSECTION:
+
 ; EDNS: version: 0, flags:; udp: 1232
+
 ; COOKIE: fb26e40916b9a3240100000067c4d3f95057b59ad34162d3 (good)
+
 ;; QUESTION SECTION:
 
+
 ;; ANSWER SECTION:
+
 carpic.com.             300     IN      A       10.30.0.11
 
+
 ;; Query time: 0 msec
+
 ;; SERVER: 127.0.0.11#53(127.0.0.11) (UDP)
+
 ;; WHEN: Sun Mar 02 21:56:09 UTC 2025
+
 ;; MSG SIZE  rcvd: 83
+
 
 
 
@@ -74,16 +109,24 @@ carpic.com.             300     IN      A       10.30.0.11
 
 
 
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
+  % Total    % Received % Xferd  Average   Speed   Time    Time     Time  Current
+                                   Dload  Upload   Total   Spent    Left  Speed
+                                 
   0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0HTTP/1.1 200 OK
+  
 content-length: 110497
+
 last-modified: Sun, 02 Mar 2025 20:10:50 GMT
+
 etag: "67c4bb4a-1afa1"
+
 accept-ranges: bytes
+
 x-load-balancer: lb-world
 
+
   0  107k    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+  
 
 
   
