@@ -2,9 +2,9 @@
 
 
 
-
+```bash
 ## > docker exec client-europe dig carpic.com  
-
+```
 
 
 ; <<>> DiG 9.18.30-0ubuntu0.24.04.2-Ubuntu <<>> carpic.com
