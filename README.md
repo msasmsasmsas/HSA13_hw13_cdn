@@ -214,7 +214,12 @@ Running 5s test @ http://carpic.com/1.jpg
   
 Requests/sec:   2044.85
 
-Transfer/sec:    224.96MB
+
+balance 	round robin 	leastconn 	random
+Requests 	10427 	10523 	10278
+Latency, s (avg) 	0.46 	1.04 	1.22
+Latency, s (max) 	1.49 	1.89 	2.09
+
 
 
 
