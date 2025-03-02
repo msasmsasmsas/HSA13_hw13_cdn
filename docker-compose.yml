@@ -59,6 +59,7 @@ services:
         ipv4_address: 10.30.0.20
     restart: unless-stopped
 
+
   node2:
     image: nginx:latest
     container_name: node2
