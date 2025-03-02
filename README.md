@@ -3,7 +3,7 @@
 
 
 
-(.venv) PS E:\HSA13\HSA13_hw13_cdn> docker exec client-europe dig carpic.com  # Повинен вернути IP europe балансувальника (10.30.0.10)
+## > docker exec client-europe dig carpic.com  # Повинен вернути IP europe балансувальника (10.30.0.10)
 
 
 
@@ -44,7 +44,7 @@ carpic.com.             300     IN      A       10.30.0.10
 
 
 
-(.venv) PS E:\HSA13\HSA13_hw13_cdn> docker exec client-europe curl -I carpic.com/1.jpg  # В заголовках повинен быти x-load-balancer: lb-america
+## > docker exec client-europe curl -I carpic.com/1.jpg  # В заголовках повинен быти x-load-balancer: lb-america
 
 
 
@@ -65,7 +65,7 @@ x-load-balancer: lb-europe
 
 
 
-(.venv) PS E:\HSA13\HSA13_hw13_cdn> docker exec client-world dig carpic.com  # Повинен вернути IP word балансувальника  (10.30.0.11)
+## > docker exec client-world dig carpic.com  # Повинен вернути IP word балансувальника  (10.30.0.11)
 
 
 ; <<>> DiG 9.18.30-0ubuntu0.24.04.2-Ubuntu <<>> carpic.com
@@ -105,7 +105,7 @@ carpic.com.             300     IN      A       10.30.0.11
 
 
 
-(.venv) PS E:\HSA13\HSA13_hw13_cdn> docker exec client-world curl -I carpic.com/1.jpg  # В заголовках повинен быти x-load-balancer: lb-world
+## > docker exec client-world curl -I carpic.com/1.jpg  # В заголовках повинен быти x-load-balancer: lb-world
 
 
 
@@ -131,57 +131,91 @@ x-load-balancer: lb-world
 
   
 
-(.venv) PS E:\HSA13\HSA13_hw13_cdn> docker exec -it client-world siege -v -t5S -f /data/image-urls
+##> docker exec -it client-world siege -v -t5S -f /data/image-urls
 
 
 
 New configuration template added to /root/.siege
+
 Run siege -C to view the current settings in that file
+
 
 {       "transactions":                         7195,
+
         "availability":                       100.00,
+        
         "elapsed_time":                         4.02,
+        
         "throughput":                         186.29,
+        
         "concurrency":                         23.39,
+        
         "successful_transactions":              7196,
+        
         "failed_transactions":                     0,
+        
         "longest_transaction":                  0.09,
+        
         "shortest_transaction":                 0.00
+        
 }
 
 
 
-(.venv) PS E:\HSA13\HSA13_hw13_cdn> docker exec -it client-europe siege -v -t5S -f /data/image-urls
+## > docker exec -it client-europe siege -v -t5S -f /data/image-urls
 
 
 
 New configuration template added to /root/.siege
+
 Run siege -C to view the current settings in that file
 
+
 {       "transactions":                         5105,
+
         "availability":                       100.00,
+        
         "elapsed_time":                         4.89,
+        
         "data_transferred":                   531.51,
+        
         "response_time":                        0.02,
+        
         "transaction_rate":                  1043.97,
+        
         "throughput":                         108.69,
+        
         "concurrency":                         23.69,
+        
         "successful_transactions":              5107,
+        
         "failed_transactions":                     0,
+        
         "longest_transaction":                  0.17,
+        
         "shortest_transaction":                 0.00
+        
 }
 
 
-(.venv) PS E:\HSA13\HSA13_hw13_cdn> docker exec -it client-europe wrk -c1000 -t10 -d5s http://carpic.com/1.jpg
+## > docker exec -it client-europe wrk -c1000 -t10 -d5s http://carpic.com/1.jpg
+
 Running 5s test @ http://carpic.com/1.jpg
+
   10 threads and 1000 connections
+  
   Thread Stats      Avg        Stdev       Max   +/- Stdev
+  
     Latency       459.73ms    183.80ms    1.49s    88.61%
+    
     Req/Sec       225.17      106.45      700.00     72.33%
+    
   10427 requests in 5.10s, 1.12GB read
+  
 Requests/sec:   2044.85
+
 Transfer/sec:    224.96MB
+
 
 
 
