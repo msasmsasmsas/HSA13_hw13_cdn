@@ -23,7 +23,7 @@ services:
     image: haproxy:latest
     container_name: lb1_europe
     ports:
-      - "80:80"
+      - "8081:80"
     volumes:
       - ./haproxy/lb1-europe.cfg:/usr/local/etc/haproxy/haproxy.cfg:ro
     depends_on:
@@ -38,7 +38,7 @@ services:
     image: haproxy:latest
     container_name: lb2_world
     ports:
-      - "8080:80"
+      - "8082:80"
     volumes:
       - ./haproxy/lb2-world.cfg:/usr/local/etc/haproxy/haproxy.cfg:ro
     depends_on:
@@ -120,4 +120,4 @@ networks:
     driver: bridge
     ipam:
       config:
-        - subnet: 10.30.0.0/16
+        - subnet: 10.30.0.0/15
