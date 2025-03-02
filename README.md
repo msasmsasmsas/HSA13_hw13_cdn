@@ -3,8 +3,7 @@
 
 
 
-## > docker exec client-europe dig carpic.com  # Повинен вернути IP europe балансувальника (10.30.0.10)
-
+## > docker exec client-europe dig carpic.com  
 
 
 
@@ -44,7 +43,7 @@ carpic.com.             300     IN      A       10.30.0.10
 
 
 
-## > docker exec client-europe curl -I carpic.com/1.jpg  # В заголовках повинен быти x-load-balancer: lb-america
+## > docker exec client-europe curl -I carpic.com/1.jpg  
 
 
 
@@ -65,7 +64,7 @@ x-load-balancer: lb-europe
 
 
 
-## > docker exec client-world dig carpic.com  # Повинен вернути IP word балансувальника  (10.30.0.11)
+## > docker exec client-world dig carpic.com  
 
 
 ; <<>> DiG 9.18.30-0ubuntu0.24.04.2-Ubuntu <<>> carpic.com
@@ -105,7 +104,7 @@ carpic.com.             300     IN      A       10.30.0.11
 
 
 
-## > docker exec client-world curl -I carpic.com/1.jpg  # В заголовках повинен быти x-load-balancer: lb-world
+## > docker exec client-world curl -I carpic.com/1.jpg 
 
 
 
