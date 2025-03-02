@@ -9,6 +9,7 @@ services:
       - "1053:53/tcp"
     volumes:
       - ./bind/config:/etc/bind:rw
+      - ./bind/zones:/etc/bind/zones:rw  # ← Добавляем монтирование зоны
       - ./cache:/var/cache/bind
       - ./records:/var/lib/bind
     depends_on:
@@ -33,6 +34,11 @@ services:
       cdn_net:
         ipv4_address: 10.30.0.10
     restart: unless-stopped
+    environment:
+      - BIND9_USER=root
+      - RUN_AS_ROOT=1
+    user: root
+
 
   lb2_world:
     image: haproxy:latest
@@ -48,6 +54,11 @@ services:
       cdn_net:
         ipv4_address: 10.30.0.11
     restart: unless-stopped
+    environment:
+      - BIND9_USER=root
+      - RUN_AS_ROOT=1
+    user: root
+
 
 
   node1:

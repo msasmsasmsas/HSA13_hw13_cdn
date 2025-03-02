@@ -6,5 +6,5 @@ carpic.com. 300 IN SOA carpic.com. hostmaster.carpic.com. (
         300 ; minimum (5 minutes)
 )
 carpic.com. 300 IN NS carpic.com.
-carpic.com. 300 IN A 172.30.0.10
-*.carpic.com. 300 IN A 172.30.0.10
+carpic.com. 300 IN A 10.30.0.10
+*.carpic.com. 300 IN A 10.30.0.10
