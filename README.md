@@ -3,7 +3,7 @@
 
 
 ```bash
-## > docker exec client-europe dig carpic.com  
+ > docker exec client-europe dig carpic.com  
 ```
 
 
@@ -42,9 +42,9 @@ carpic.com.             300     IN      A       10.30.0.10
 
 
 
-
-## > docker exec client-europe curl -I carpic.com/1.jpg  
-
+```bash
+ > docker exec client-europe curl -I carpic.com/1.jpg  
+```
 
 
   % Total    % Received % Xferd  Average   Speed   Time    Time     Time  Current
@@ -63,9 +63,9 @@ accept-ranges: bytes
 x-load-balancer: lb-europe
 
 
-
-## > docker exec client-world dig carpic.com  
-
+```bash
+ > docker exec client-world dig carpic.com  
+```
 
 ; <<>> DiG 9.18.30-0ubuntu0.24.04.2-Ubuntu <<>> carpic.com
 
@@ -103,9 +103,9 @@ carpic.com.             300     IN      A       10.30.0.11
 
 
 
-
-## > docker exec client-world curl -I carpic.com/1.jpg 
-
+```bash
+ > docker exec client-world curl -I carpic.com/1.jpg 
+```
 
 
   % Total    % Received % Xferd  Average   Speed   Time    Time     Time  Current
@@ -129,9 +129,9 @@ x-load-balancer: lb-world
 
 
   
-
-##> docker exec -it client-world siege -v -t5S -f /data/image-urls
-
+```bash
+> docker exec -it client-world siege -v -t5S -f /data/image-urls
+```
 
 
 New configuration template added to /root/.siege
@@ -160,9 +160,9 @@ Run siege -C to view the current settings in that file
 }
 
 
-
-## > docker exec -it client-europe siege -v -t5S -f /data/image-urls
-
+```bash
+ > docker exec -it client-europe siege -v -t5S -f /data/image-urls
+```
 
 
 New configuration template added to /root/.siege
@@ -196,8 +196,9 @@ Run siege -C to view the current settings in that file
         
 }
 
-
-## > docker exec -it client-europe wrk -c1000 -t10 -d5s http://carpic.com/1.jpg
+```bash
+ > docker exec -it client-europe wrk -c1000 -t10 -d5s http://carpic.com/1.jpg
+```
 
 Running 5s test @ http://carpic.com/1.jpg
 
