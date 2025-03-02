@@ -1,3 +1,8 @@
+#      HSA13_hw13_cdn
+
+
+
+
 (.venv) PS E:\HSA13\HSA13_hw13_cdn> docker exec client-europe dig carpic.com  # Повинен вернути IP europe балансувальника (10.30.0.10)
 
 
