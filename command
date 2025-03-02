@@ -4,7 +4,10 @@ git remote add origin https://github.com/msasmsasmsas/HSA13_hw13_sdn
 
 git remote -v
 
+docker network prune -f
+docker compose down
 docker compose up -d
+
 
 docker exec client-europe dig carpic.com  # Повинен вернути IP europe балансувальника (10.30.0.10)
 docker exec client-europe curl -I carpic.com/1.jpg  # В заголовках повинен быти x-load-balancer: lb-america
